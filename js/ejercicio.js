@@ -1,7 +1,20 @@
-function calcularEdad(fecha){
-    let fechaHoy = new Date();
-    fechaHoy = Date.parse(fechaHoy);
-    fecha = Date.parse(fecha);
-    console.log(fechaHoy,fecha);
+function calcularEdad(fechaNacimiento) {
+    fechaNacimiento = new Date(fechaNacimiento);
+    const fechaHoy = new Date();
+
+    const años = fechaHoy.getFullYear() - fechaNacimiento.getFullYear();
+    const mesActual = fechaHoy.getMonth();
+    const mesNacimiento = fechaNacimiento.getMonth();
+    const diaActual = fechaHoy.getDate();
+    const diaNacimiento = fechaNacimiento.getDate();
+
+    if (mesActual < mesNacimiento || (mesActual === mesNacimiento && diaActual < diaNacimiento)) {
+        return (años - 1);
+    } else {
+        return años;
+    }
 }
-calcularEdad("2006-10-06Z14:55:00 GMT-3")
+const nombre = prompt("Ingresa tu nombre")
+const fechaNacimiento = prompt("Ingresa tu fecha de nacimiento (formato: AAAA-MM-DD):");
+const edadEnAños = calcularEdad(fechaNacimiento);
+console.log(`Hola ${nombre}, tienes ${edadEnAños} años`);
