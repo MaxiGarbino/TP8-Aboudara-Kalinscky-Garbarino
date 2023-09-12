@@ -18,3 +18,13 @@ const nombre = prompt("Ingresa tu nombre")
 const fechaNacimiento = prompt("Ingresa tu fecha de nacimiento (formato: AAAA-MM-DD):");
 const edadEnAños = calcularEdad(fechaNacimiento);
 console.log(`Hola ${nombre}, tienes ${edadEnAños} años`);
+
+function CalculadoraRecaudacion(cadena){
+    var array = cadena.split(',');
+    let suma = 0;
+    for (var element of array){
+        suma += parseFloat(element.replace(/[^\d.-]/g, ''));
+    }
+    console.log(suma);
+}
+CalculadoraRecaudacion("Pizza:15.50, Hamburguesa:8.75, Bebidas:4.25");
