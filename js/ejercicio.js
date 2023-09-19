@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let p = document.getElementById("StringSeparador");
         p.innerHTML = cadena;
     }
-    StringSeparador("Simone, Broncas, Kalinscky, Abdul, Lerner, Mellebovsky");
-    function CortarTexto(){
+    StringSeparador("Simone, Bronsztein, Kalinscky, Abdul, Lerner, Mellebovsky");
+    function CortarTexto(cadena, cant){
         
     }
 });
