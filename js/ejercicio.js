@@ -19,12 +19,26 @@ const fechaNacimiento = prompt("Ingresa tu fecha de nacimiento (formato: AAAA-MM
 const edadEnAños = calcularEdad(fechaNacimiento);
 console.log(`Hola ${nombre}, tienes ${edadEnAños} años`);
 
-function CalculadoraRecaudacion(cadena){
-    var array = cadena.split(',');
-    let suma = 0;
-    for (var element of array){
-        suma += parseFloat(element.replace(/[^\d.-]/g, ''));
+document.addEventListener("DOMContentLoaded", function () {
+    function CalculadoraRecaudacion(cadena){
+        var array = cadena.split(',');
+        let suma = 0;
+        for (var element of array){
+            suma += parseFloat(element.replace(/[^\d.-]/g, ''));
+        }
+        let p = document.getElementById('CalculadoraRecaudacion');
+        console.log(p.id);
+        p.innerHTML = "Total de la recaudacion: " + suma.toFixed(2);   
     }
-    console.log(suma);
-}
-CalculadoraRecaudacion("Pizza:15.50, Hamburguesa:8.75, Bebidas:4.25");
+    CalculadoraRecaudacion("Pizza:15.50, Hamburguesa:8.75, Bebidas:4.25");
+    function StringSeparador(cadena){
+        cadena = cadena.replaceAll(',', '-');
+        cadena = cadena.replaceAll(' ', '');
+        let p = document.getElementById("StringSeparador");
+        p.innerHTML = cadena;
+    }
+    StringSeparador("Simone, Broncas, Kalinscky, Abdul, Lerner, Mellebovsky");
+    function CortarTexto(){
+        
+    }
+});
