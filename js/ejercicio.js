@@ -88,16 +88,45 @@ function trianguloAsteriscos(){
     }
 }
 trianguloAsteriscos();
-//funcion 7
-function nombresConA(){
-}
-//funcion 11
-function CalculadoraRecaudacion(cadena){
-    var array = cadena.split(',');
-    let suma = 0;
-    for (var element of array){
-        suma += parseFloat(element.replace(/[^\d.-]/g, ''));
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    
+nombresConA();
+    //funcion 7
+
+    //analia, maxi, abou, chino, simone, anashe, ANAahe, lol, raian, aian, 189a
+    function nombresConA(){
+        let p = document.getElementById('funcionSiete');
+    const nombres = prompt("Ingrese una lista de nombres separados por coma ',' ")
+    const arrayNombres = nombres.split(',')
+    for (let i = 0; i < arrayNombres.length; i++) {
+        if (arrayNombres[i][0] === 'a' || arrayNombres[i][0] === 'A') p.innerHTML += arrayNombres[i];
     }
-    console.log(suma);
 }
-CalculadoraRecaudacion("Pizza:15.50, Hamburguesa:8.75, Bebidas:4.25");
+    
+    //funcion 11
+    function CalculadoraRecaudacion(cadena){
+        var array = cadena.split(',');
+        let suma = 0;
+        for (var element of array){
+            suma += parseFloat(element.replace(/[^\d.-]/g, ''));
+        }
+        let p = document.getElementById('CalculadoraRecaudacion');
+        console.log(p.id);
+        p.innerHTML = "Total de la recaudacion: " + suma.toFixed(2);   
+    }
+    CalculadoraRecaudacion("Pizza:15.50, Hamburguesa:8.75, Bebidas:4.25");
+    //funcion 10
+    
+    function StringSeparador(cadena){
+        cadena = cadena.replaceAll(',', '-');
+        cadena = cadena.replaceAll(' ', '');
+        let p = document.getElementById("StringSeparador");
+        p.innerHTML = cadena;
+    }
+    StringSeparador("Simone, Broncas, Kalinscky, Abdul, Lerner, Mellebovsky");
+    function CortarTexto(){
+        
+    }
+});
