@@ -86,10 +86,28 @@ function trianguloAsteriscos() {
             piso = piso + '*';
         }
         console.log(piso)
+        console.log(piso);
     }
 }
+function trianguloAsteriscos2(){
+    let numPisos= 11;
+    let cantGuion = numPisos-1;
+    for (let i = 0; i < Math.ceil(numPisos/2); i++) {
+        let piso = '';
+        for (let j = 0; j < Math.floor(cantGuion/2); j++) {
+            piso += '-';
+        }
+        for(let x = 0; x < numPisos-cantGuion; x++) piso += '*';
+        for (let j = 0; j < Math.floor(cantGuion/2); j++) {
+            piso += '-';
+        }
+        cantGuion = cantGuion - 2;
+        console.log(piso);
+    }
+    
+}
 trianguloAsteriscos();
-
+trianguloAsteriscos2();
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -116,6 +134,24 @@ document.addEventListener("DOMContentLoaded", function () {
         let p = document.getElementById("reemplazarPalabra");
         p.innerHTML = cadena;
     }
+    //funcion 9
+    const cadena = prompt("ingrese una cadena");
+    const cant = prompt("Ingrese un numero");
+    CortarTexto(cadena, cant);
+    function CortarTexto(cadena, cant) {
+        let p = document.getElementById('CortarTexto');
+        p.innerHTML = cadena.slice(0, cant);
+    }
+
+    //funcion 10
+
+    function StringSeparador(cadena) {
+        cadena = cadena.replaceAll(',', '-');
+        cadena = cadena.replaceAll(' ', '');
+        let p = document.getElementById("StringSeparador");
+        p.innerHTML = cadena;
+    }
+    StringSeparador("Simone, Bronsztein, Kalinscky, Abdul, Lerner, Mellebovsky");
 
     //funcion 11
     function CalculadoraRecaudacion(cadena) {
@@ -129,22 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
         p.innerHTML = "Total de la recaudacion: " + suma.toFixed(2);
     }
     CalculadoraRecaudacion("Pizza:15.50, Hamburguesa:8.75, Bebidas:4.25");
-    //funcion 10
+    
 
-    function StringSeparador(cadena) {
-        cadena = cadena.replaceAll(',', '-');
-        cadena = cadena.replaceAll(' ', '');
-        let p = document.getElementById("StringSeparador");
-        p.innerHTML = cadena;
-    }
-    StringSeparador("Simone, Bronsztein, Kalinscky, Abdul, Lerner, Mellebovsky");
-
-    //funcion 9
-    const cadena = prompt("ingrese una cadena");
-    const cant = prompt("Ingrese un numero");
-    CortarTexto(cadena, cant);
-    function CortarTexto(cadena, cant) {
-        let p = document.getElementById('CortarTexto');
-        p.innerHTML = cadena.slice(0, cant);
-    }
+    
 });
