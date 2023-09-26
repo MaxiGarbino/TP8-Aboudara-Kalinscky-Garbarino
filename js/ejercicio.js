@@ -77,18 +77,28 @@ function trianguloAsteriscos(){
         for (let j = 0; j < i + 1; j++) {
           piso = piso + '*';
         }
-        console.log(piso)
-    }
-    for (let i = 0; i < numPisos; i++) {
-        let piso = '-';
-        for (let j = 0; j < i + 1; j++) {
-          piso = piso + '*';
-        }
-        console.log(piso)
+        console.log(piso);
     }
 }
+function trianguloAsteriscos2(){
+    let numPisos= 11;
+    let cantGuion = numPisos-1;
+    for (let i = 0; i < Math.ceil(numPisos/2); i++) {
+        let piso = '';
+        for (let j = 0; j < Math.floor(cantGuion/2); j++) {
+            piso += '-';
+        }
+        for(let x = 0; x < numPisos-cantGuion; x++) piso += '*';
+        for (let j = 0; j < Math.floor(cantGuion/2); j++) {
+            piso += '-';
+        }
+        cantGuion = cantGuion - 2;
+        console.log(piso);
+    }
+    
+}
 trianguloAsteriscos();
-
+trianguloAsteriscos2();
 
 document.addEventListener("DOMContentLoaded", function () {
     
