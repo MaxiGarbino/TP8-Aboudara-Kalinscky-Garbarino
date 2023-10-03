@@ -16,24 +16,17 @@ function calcularEdad(fechaNacimiento) {
     }
 }
 
-const nombre = prompt("Ingresa tu nombre");
-const fechaNacimiento = prompt("Ingresa tu fecha de nacimiento (formato: AAAA-MM-DD):");
-const edadEnAños = calcularEdad(fechaNacimiento);
-console.log(`Hola ${nombre}, tienes ${edadEnAños} años`);
-
 //funcion 2
-function tirandoFruta() {
+function tirandoFruta(frutaUsuario) {
     const frutas = ["Pera", "Manzana", "Frutilla", "Banana", "Kiwi", "Naranja", "Limon", "Melon", "Sandia", "Mandarina"];
     for (let i = 0; i < frutas.length; i++) {
         console.log(frutas[i]);
     }
-    const frutaUsuario = prompt("Ingrese una fruta: ");
     const existeFruta = frutas.find(frutas => frutas == frutaUsuario);
     if (existeFruta) console.log("Si, tenemos " + frutaUsuario);
     else console.log("No, no tenemos " + frutaUsuario);
 
 }
-tirandoFruta();
 
 //function 3
 function comparandoTiposYDatos() {
@@ -46,7 +39,6 @@ function comparandoTiposYDatos() {
     console.log(true == 1);
     console.log("Comcluimos que en javascript los tipos de datos solo pueden tener dos valores, siendo 0 False y 1 siendo true");
 }
-comparandoTiposYDatos();
 
 //funcion 4
 function yoObjeto() {
@@ -60,15 +52,13 @@ function yoObjeto() {
         console.log(`${key} : ${ciudad[key]}`);
     }
 }
-yoObjeto();
 
 //funcion 5
 function dobleElementos(arrayNum) {
     const dobleArrayNum = arrayNum.map(arrayNum => arrayNum * 2);
     console.log(dobleArrayNum);
 }
-const arrayNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-dobleElementos(arrayNum);
+
 
 //funcion 6
 function trianguloAsteriscos() {
@@ -89,6 +79,7 @@ function trianguloAsteriscos() {
         console.log(piso);
     }
 }
+
 function trianguloAsteriscos2(){
     let numPisos= 11;
     let cantGuion = numPisos-1;
@@ -106,18 +97,15 @@ function trianguloAsteriscos2(){
     }
     
 }
-trianguloAsteriscos();
-trianguloAsteriscos2();
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    nombresConA();
+    
     //funcion 7
 
     //analia, maxi, abou, chino, simone, anashe, ANAahe, lol, raian, aian, 189a
-    function nombresConA() {
+    function nombresConA(nombres) {
         let p = document.getElementById('funcionSiete');
-        const nombres = prompt("Ingrese una lista de nombres separados por coma ',' ")
         const arrayNombres = nombres.split(',')
         for (let i = 0; i < arrayNombres.length; i++) {
             if (arrayNombres[i][0] === 'a' || arrayNombres[i][0] === 'A') p.innerHTML += arrayNombres[i];
@@ -125,19 +113,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     //funcion 8
 
-    const cadenashe = prompt('Ingrese una cadena');
-    const palabra = prompt('Ingrese la palabra que desea que sea reemplazada');
-    const nuevaPalabra = prompt('Ingrese la nueva palabra');
-    reemplazarPalabras(cadenashe, palabra, nuevaPalabra);
-    function reemplazarPalabras(cadenashe, palabra, nuevaPalabra) {
-        cadena = cadena.replaceAll('palabra', 'nuevaPalabra');
+  
+    function reemplazarPalabras(cadena, palabra, nuevaPalabra) {
+        cadena = cadena.replaceAll(palabra, nuevaPalabra);
         let p = document.getElementById("reemplazarPalabra");
         p.innerHTML = cadena;
     }
+
     //funcion 9
-    const cadena = prompt("ingrese una cadena");
-    const cant = prompt("Ingrese un numero");
-    CortarTexto(cadena, cant);
+   
     function CortarTexto(cadena, cant) {
         let p = document.getElementById('CortarTexto');
         p.innerHTML = cadena.slice(0, cant);
@@ -151,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let p = document.getElementById("StringSeparador");
         p.innerHTML = cadena;
     }
-    StringSeparador("Simone, Bronsztein, Kalinscky, Abdul, Lerner, Mellebovsky");
 
     //funcion 11
     function CalculadoraRecaudacion(cadena) {
@@ -164,7 +147,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(p.id);
         p.innerHTML = "Total de la recaudacion: " + suma.toFixed(2);
     }
-    CalculadoraRecaudacion("Pizza:15.50, Hamburguesa:8.75, Bebidas:4.25");
     
 
     
